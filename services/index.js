@@ -2,6 +2,8 @@ import { request, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
+const url = process.env.URL;
+
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
@@ -212,7 +214,7 @@ export const getFeaturedPosts = async () => {
 };
 
 export const submitComment = async (obj) => {
-  const result = await fetch('http://localhost:3000/api/comments', {
+  const result = await fetch('https://cryptoksh.vercel.app/api/comments', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
